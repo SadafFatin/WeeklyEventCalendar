@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/item_block_margin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="3dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/event_title"
+        android:padding="@dimen/text_view_padding"
+        android:layout_marginStart="@dimen/text_view_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        tools:text="@string/placeholder_event_title"/>
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/event_desc"
+        android:padding="@dimen/text_view_padding"
+        android:layout_margin="@dimen/text_view_margin"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/event_title"
+        android:textAppearance="?attr/textAppearanceBody1"
+        tools:text="@string/placeholder_event_desc"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_margin="@dimen/text_view_margin"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/event_desc">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/event_date"
+            android:layout_weight="2"
+            android:padding="@dimen/text_view_padding"
+            android:layout_margin="@dimen/text_view_margin"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            tools:text="@string/placeholder_date_text"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/event_delete"
+            android:layout_weight=".5"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            app:icon="@drawable/ic_delete"
+            app:iconGravity="textEnd"
+            app:iconTint="?attr/colorError"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/event_edit"
+            android:layout_weight=".5"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            app:icon="@drawable/ic_edit_calendar"
+            app:iconGravity="textEnd"
+            app:iconTint="?attr/colorPrimaryVariant"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

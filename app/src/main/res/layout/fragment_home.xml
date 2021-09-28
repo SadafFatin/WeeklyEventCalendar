@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/item_block_padding"
+        tools:context=".ui.home.HomeFragment">
+
+        <!-- days toolbar -->
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/calendar_prev_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:src="@drawable/ic_arrow_left"
+            app:layout_constraintBottom_toBottomOf="@+id/date_display"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/date_display" />
+
+        <LinearLayout
+            android:id="@+id/date_display"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/weekDaysListView"
+            app:layout_constraintEnd_toStartOf="@+id/calendar_next_button"
+            app:layout_constraintStart_toEndOf="@+id/calendar_prev_button"
+            app:layout_constraintTop_toTopOf="parent">
+            <!-- date title -->
+            <TextView
+                android:id="@+id/date_display_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholder_date_text"
+                android:textAppearance="?attr/textAppearanceHeadline5" />
+            <!-- date title -->
+            <TextView
+                android:id="@+id/date_display_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                tools:text="@string/placeholder_weekday_name" />
+
+            <Button
+                android:id="@+id/date_display_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/prompt_goto_today" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/calendar_next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@+id/date_display"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/date_display" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/weekDaysListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/activity_vertical_margin"
+            android:orientation="horizontal"
+            android:padding="@dimen/item_block_padding"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/date_display"
+            app:reverseLayout="false" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/no_event_layout"
+                app:layout_constraintTop_toBottomOf="@+id/weekDaysListView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="40dp"
+                android:padding="@dimen/text_view_padding"
+                android:text="@string/label_no_event"
+                android:textAppearance="?attr/textAppearanceBody1" />
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/eventsListView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/activity_vertical_margin"
+            android:orientation="vertical"
+            android:padding="@dimen/item_block_padding"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weekDaysListView"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_new_event_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginBottom="8dp"
+            android:elevation="@dimen/activity_vertical_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_edit_calendar" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

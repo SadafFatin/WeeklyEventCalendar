@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "333315929682",
+    "project_id": "event-calendar-3d51c",
+    "storage_bucket": "event-calendar-3d51c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:333315929682:android:b99cfd009f9a6d0916518b",
+        "android_client_info": {
+          "package_name": "co.jeeon.exam.eventcalender"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "333315929682-4l0al8nvpcg9i2uktn112rltir9r5chr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.jeeon.exam.eventcalender",
+            "certificate_hash": "86d9e9c03deab810bfb9a801370b4403e1bba2a5"
+          }
+        },
+        {
+          "client_id": "333315929682-cshgrgh6q4s25mga88787mqfh6hdurct.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQcAyUN_wKifKfRA39DpyWiNpNcGfywJU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "333315929682-cshgrgh6q4s25mga88787mqfh6hdurct.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

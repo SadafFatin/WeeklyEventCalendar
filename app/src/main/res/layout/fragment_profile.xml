@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="currentUser"
+            type="co.jeeon.exam.eventcalender.models.User" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.myprofile.ProfileFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/user_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{currentUser.isloggedIn == true ? view.VISIBLE: view.GONE }"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/item_block_padding">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/avater"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_margin="@dimen/item_block_margin"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_view_margin"
+                        android:padding="@dimen/text_view_padding"
+                        android:text="@{currentUser.name}"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        tools:text="@string/placeholder_user_name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_view_margin"
+                        android:padding="@dimen/text_view_padding"
+                        android:text="@{currentUser.email}"
+                        android:textAppearance="?attr/textAppearanceSubtitle2"
+                        tools:text="@string/placeholder_user_email" />
+
+
+                    <Button
+                        android:id="@+id/sync_my_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_sync_data_cloud" />
+
+
+                    <Button
+                        android:id="@+id/fetch_my_data"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_fetch_data_cloud" />
+
+                    <Button
+                        android:id="@+id/sign_out"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_sign_out" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_sign_in"
+                android:visibility="@{currentUser.isloggedIn == true ? view.GONE: view.VISIBLE }"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_card" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
